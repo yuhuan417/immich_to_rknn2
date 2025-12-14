@@ -14,6 +14,12 @@ def get_tensor_type(name, graph):
     for info in graph.initializer:
         if info.name == name:
             return info.data_type
+    # Trace through Cast node to get output type from 'to' attribute
+    for node in graph.node:
+        if name in node.output and node.op_type == 'Cast':
+            for attr in node.attribute:
+                if attr.name == 'to':
+                    return attr.i
     return None
 
 def get_constant_value(name, graph):
