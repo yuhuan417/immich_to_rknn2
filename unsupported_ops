@@ -1,0 +1,647 @@
+扫描目录: models
+================================================================================
+找到 127 个 ONNX 模型文件
+
+检查: LABSE-Vit-L-14/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: LABSE-Vit-L-14/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN101__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN101__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN101__yfcc15m/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN101__yfcc15m/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50__cc12m/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50__cc12m/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50__yfcc15m/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50__yfcc15m/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50x16__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50x16__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50x4__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50x4__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50x64__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: RN50x64__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-256__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-256__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-384__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-384__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-512__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-512__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-i18n-256__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP-i18n-256__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP2__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP2__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-SigLIP__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-plus-240__laion400m_e31/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-plus-240__laion400m_e31/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-plus-240__laion400m_e32/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16-plus-240__laion400m_e32/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16__laion400m_e31/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16__laion400m_e31/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16__laion400m_e32/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16__laion400m_e32/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-16__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32-SigLIP2-256__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32-SigLIP2-256__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion2b-s34b-b79k/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion2b-s34b-b79k/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion2b_e16/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion2b_e16/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion400m_e31/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion400m_e31/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion400m_e32/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__laion400m_e32/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-B-32__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-H-14-378-quickgelu__dfn5b/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-H-14-378-quickgelu__dfn5b/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-H-14-quickgelu__dfn5b/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-H-14-quickgelu__dfn5b/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-H-14__laion2b-s32b-b79k/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-H-14__laion2b-s32b-b79k/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14-336__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14-336__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14-quickgelu__dfn2b/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14-quickgelu__dfn2b/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__laion2b-s32b-b82k/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__laion2b-s32b-b82k/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__laion400m_e31/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__laion400m_e31/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__laion400m_e32/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__laion400m_e32/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__openai/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-14__openai/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP-256__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP-256__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP-384__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP-384__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP2-256__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP2-256__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP2-384__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP2-384__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP2-512__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-L-16-SigLIP2-512__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-14-SigLIP-384__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-14-SigLIP-384__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-14-SigLIP2-378__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-14-SigLIP2-378__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-14-SigLIP2__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-14-SigLIP2__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-16-SigLIP2-256__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-16-SigLIP2-256__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-16-SigLIP2-384__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-16-SigLIP2-384__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-16-SigLIP2-512__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-SO400M-16-SigLIP2-512__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-g-14__laion2b-s12b-b42k/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Softmax
+检查: ViT-g-14__laion2b-s12b-b42k/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Softmax
+检查: ViT-gopt-16-SigLIP2-256__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-gopt-16-SigLIP2-256__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-gopt-16-SigLIP2-384__webli/textual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: ViT-gopt-16-SigLIP2-384__webli/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-Vit-B-16Plus/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-Vit-B-16Plus/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-Vit-B-32/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-Vit-B-32/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-Vit-L-14/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: XLM-Roberta-Large-Vit-L-14/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: antelopev2/detection
+  ⚠️  部分支持的算子: Resize, Slice
+检查: antelopev2/recognition
+  ✅ 所有算子均受支持
+检查: buffalo_l/detection
+  ⚠️  部分支持的算子: Resize, Slice
+检查: buffalo_l/recognition
+  ✅ 所有算子均受支持
+检查: buffalo_l_batch/detection
+  ⚠️  部分支持的算子: Resize
+检查: buffalo_l_batch/recognition
+  ✅ 所有算子均受支持
+检查: buffalo_m/detection
+  ⚠️  部分支持的算子: Resize, Slice
+检查: buffalo_m/recognition
+  ✅ 所有算子均受支持
+检查: buffalo_s/detection
+  ⚠️  部分支持的算子: Resize, Slice
+检查: buffalo_s/recognition
+  ✅ 所有算子均受支持
+检查: nllb-clip-base-siglip__mrl/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: nllb-clip-base-siglip__mrl/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: nllb-clip-base-siglip__v1/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: nllb-clip-base-siglip__v1/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: nllb-clip-large-siglip__mrl/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: nllb-clip-large-siglip__mrl/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: nllb-clip-large-siglip__v1/textual
+  ❌ 不支持的算子: CumSum, Not, ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: nllb-clip-large-siglip__v1/visual
+  ❌ 不支持的算子: ReduceL2
+  ⚠️  部分支持的算子: Slice, Softmax
+检查: scrfd_34g_gnkps/detection
+  ⚠️  部分支持的算子: Resize
+
+================================================================================
+汇总报告
+================================================================================
+
+总模型数: 127
+有问题的模型: 116
+正常模型: 11
+
+不支持的算子统计:
+----------------------------------------
+  ReduceL2: 出现在 116 个模型中
+    - LABSE-Vit-L-14/textual
+    - LABSE-Vit-L-14/visual
+    - RN101__openai/textual
+    - RN101__openai/visual
+    - RN101__yfcc15m/textual
+    - RN101__yfcc15m/visual
+    - RN50__cc12m/textual
+    - RN50__cc12m/visual
+    - RN50__openai/textual
+    - RN50__openai/visual
+    - RN50__yfcc15m/textual
+    - RN50__yfcc15m/visual
+    - RN50x16__openai/textual
+    - RN50x16__openai/visual
+    - RN50x4__openai/textual
+    - RN50x4__openai/visual
+    - RN50x64__openai/textual
+    - RN50x64__openai/visual
+    - ViT-B-16-SigLIP-256__webli/textual
+    - ViT-B-16-SigLIP-256__webli/visual
+    - ViT-B-16-SigLIP-384__webli/textual
+    - ViT-B-16-SigLIP-384__webli/visual
+    - ViT-B-16-SigLIP-512__webli/textual
+    - ViT-B-16-SigLIP-512__webli/visual
+    - ViT-B-16-SigLIP-i18n-256__webli/textual
+    - ViT-B-16-SigLIP-i18n-256__webli/visual
+    - ViT-B-16-SigLIP2__webli/textual
+    - ViT-B-16-SigLIP2__webli/visual
+    - ViT-B-16-SigLIP__webli/textual
+    - ViT-B-16-SigLIP__webli/visual
+    - ViT-B-16-plus-240__laion400m_e31/textual
+    - ViT-B-16-plus-240__laion400m_e31/visual
+    - ViT-B-16-plus-240__laion400m_e32/textual
+    - ViT-B-16-plus-240__laion400m_e32/visual
+    - ViT-B-16__laion400m_e31/textual
+    - ViT-B-16__laion400m_e31/visual
+    - ViT-B-16__laion400m_e32/textual
+    - ViT-B-16__laion400m_e32/visual
+    - ViT-B-16__openai/textual
+    - ViT-B-16__openai/visual
+    - ViT-B-32-SigLIP2-256__webli/textual
+    - ViT-B-32-SigLIP2-256__webli/visual
+    - ViT-B-32__laion2b-s34b-b79k/textual
+    - ViT-B-32__laion2b-s34b-b79k/visual
+    - ViT-B-32__laion2b_e16/textual
+    - ViT-B-32__laion2b_e16/visual
+    - ViT-B-32__laion400m_e31/textual
+    - ViT-B-32__laion400m_e31/visual
+    - ViT-B-32__laion400m_e32/textual
+    - ViT-B-32__laion400m_e32/visual
+    - ViT-B-32__openai/textual
+    - ViT-B-32__openai/visual
+    - ViT-H-14-378-quickgelu__dfn5b/textual
+    - ViT-H-14-378-quickgelu__dfn5b/visual
+    - ViT-H-14-quickgelu__dfn5b/textual
+    - ViT-H-14-quickgelu__dfn5b/visual
+    - ViT-H-14__laion2b-s32b-b79k/textual
+    - ViT-H-14__laion2b-s32b-b79k/visual
+    - ViT-L-14-336__openai/textual
+    - ViT-L-14-336__openai/visual
+    - ViT-L-14-quickgelu__dfn2b/textual
+    - ViT-L-14-quickgelu__dfn2b/visual
+    - ViT-L-14__laion2b-s32b-b82k/textual
+    - ViT-L-14__laion2b-s32b-b82k/visual
+    - ViT-L-14__laion400m_e31/textual
+    - ViT-L-14__laion400m_e31/visual
+    - ViT-L-14__laion400m_e32/textual
+    - ViT-L-14__laion400m_e32/visual
+    - ViT-L-14__openai/textual
+    - ViT-L-14__openai/visual
+    - ViT-L-16-SigLIP-256__webli/textual
+    - ViT-L-16-SigLIP-256__webli/visual
+    - ViT-L-16-SigLIP-384__webli/textual
+    - ViT-L-16-SigLIP-384__webli/visual
+    - ViT-L-16-SigLIP2-256__webli/textual
+    - ViT-L-16-SigLIP2-256__webli/visual
+    - ViT-L-16-SigLIP2-384__webli/textual
+    - ViT-L-16-SigLIP2-384__webli/visual
+    - ViT-L-16-SigLIP2-512__webli/textual
+    - ViT-L-16-SigLIP2-512__webli/visual
+    - ViT-SO400M-14-SigLIP-384__webli/textual
+    - ViT-SO400M-14-SigLIP-384__webli/visual
+    - ViT-SO400M-14-SigLIP2-378__webli/textual
+    - ViT-SO400M-14-SigLIP2-378__webli/visual
+    - ViT-SO400M-14-SigLIP2__webli/textual
+    - ViT-SO400M-14-SigLIP2__webli/visual
+    - ViT-SO400M-16-SigLIP2-256__webli/textual
+    - ViT-SO400M-16-SigLIP2-256__webli/visual
+    - ViT-SO400M-16-SigLIP2-384__webli/textual
+    - ViT-SO400M-16-SigLIP2-384__webli/visual
+    - ViT-SO400M-16-SigLIP2-512__webli/textual
+    - ViT-SO400M-16-SigLIP2-512__webli/visual
+    - ViT-g-14__laion2b-s12b-b42k/textual
+    - ViT-g-14__laion2b-s12b-b42k/visual
+    - ViT-gopt-16-SigLIP2-256__webli/textual
+    - ViT-gopt-16-SigLIP2-256__webli/visual
+    - ViT-gopt-16-SigLIP2-384__webli/textual
+    - ViT-gopt-16-SigLIP2-384__webli/visual
+    - XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/textual
+    - XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/visual
+    - XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/textual
+    - XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/visual
+    - XLM-Roberta-Large-Vit-B-16Plus/textual
+    - XLM-Roberta-Large-Vit-B-16Plus/visual
+    - XLM-Roberta-Large-Vit-B-32/textual
+    - XLM-Roberta-Large-Vit-B-32/visual
+    - XLM-Roberta-Large-Vit-L-14/textual
+    - XLM-Roberta-Large-Vit-L-14/visual
+    - nllb-clip-base-siglip__mrl/textual
+    - nllb-clip-base-siglip__mrl/visual
+    - nllb-clip-base-siglip__v1/textual
+    - nllb-clip-base-siglip__v1/visual
+    - nllb-clip-large-siglip__mrl/textual
+    - nllb-clip-large-siglip__mrl/visual
+    - nllb-clip-large-siglip__v1/textual
+    - nllb-clip-large-siglip__v1/visual
+  Not: 出现在 9 个模型中
+    - XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/textual
+    - XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/textual
+    - XLM-Roberta-Large-Vit-B-16Plus/textual
+    - XLM-Roberta-Large-Vit-B-32/textual
+    - XLM-Roberta-Large-Vit-L-14/textual
+    - nllb-clip-base-siglip__mrl/textual
+    - nllb-clip-base-siglip__v1/textual
+    - nllb-clip-large-siglip__mrl/textual
+    - nllb-clip-large-siglip__v1/textual
+  CumSum: 出现在 9 个模型中
+    - XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/textual
+    - XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/textual
+    - XLM-Roberta-Large-Vit-B-16Plus/textual
+    - XLM-Roberta-Large-Vit-B-32/textual
+    - XLM-Roberta-Large-Vit-L-14/textual
+    - nllb-clip-base-siglip__mrl/textual
+    - nllb-clip-base-siglip__v1/textual
+    - nllb-clip-large-siglip__mrl/textual
+    - nllb-clip-large-siglip__v1/textual
+
+部分支持的算子统计:
+----------------------------------------
+  Slice: 出现在 118 个模型中
+  Softmax: 出现在 116 个模型中
+  Resize: 出现在 6 个模型中
+
+需要处理的模型列表:
+----------------------------------------
+  - LABSE-Vit-L-14/textual
+  - LABSE-Vit-L-14/visual
+  - RN101__openai/textual
+  - RN101__openai/visual
+  - RN101__yfcc15m/textual
+  - RN101__yfcc15m/visual
+  - RN50__cc12m/textual
+  - RN50__cc12m/visual
+  - RN50__openai/textual
+  - RN50__openai/visual
+  - RN50__yfcc15m/textual
+  - RN50__yfcc15m/visual
+  - RN50x16__openai/textual
+  - RN50x16__openai/visual
+  - RN50x4__openai/textual
+  - RN50x4__openai/visual
+  - RN50x64__openai/textual
+  - RN50x64__openai/visual
+  - ViT-B-16-SigLIP-256__webli/textual
+  - ViT-B-16-SigLIP-256__webli/visual
+  - ViT-B-16-SigLIP-384__webli/textual
+  - ViT-B-16-SigLIP-384__webli/visual
+  - ViT-B-16-SigLIP-512__webli/textual
+  - ViT-B-16-SigLIP-512__webli/visual
+  - ViT-B-16-SigLIP-i18n-256__webli/textual
+  - ViT-B-16-SigLIP-i18n-256__webli/visual
+  - ViT-B-16-SigLIP2__webli/textual
+  - ViT-B-16-SigLIP2__webli/visual
+  - ViT-B-16-SigLIP__webli/textual
+  - ViT-B-16-SigLIP__webli/visual
+  - ViT-B-16-plus-240__laion400m_e31/textual
+  - ViT-B-16-plus-240__laion400m_e31/visual
+  - ViT-B-16-plus-240__laion400m_e32/textual
+  - ViT-B-16-plus-240__laion400m_e32/visual
+  - ViT-B-16__laion400m_e31/textual
+  - ViT-B-16__laion400m_e31/visual
+  - ViT-B-16__laion400m_e32/textual
+  - ViT-B-16__laion400m_e32/visual
+  - ViT-B-16__openai/textual
+  - ViT-B-16__openai/visual
+  - ViT-B-32-SigLIP2-256__webli/textual
+  - ViT-B-32-SigLIP2-256__webli/visual
+  - ViT-B-32__laion2b-s34b-b79k/textual
+  - ViT-B-32__laion2b-s34b-b79k/visual
+  - ViT-B-32__laion2b_e16/textual
+  - ViT-B-32__laion2b_e16/visual
+  - ViT-B-32__laion400m_e31/textual
+  - ViT-B-32__laion400m_e31/visual
+  - ViT-B-32__laion400m_e32/textual
+  - ViT-B-32__laion400m_e32/visual
+  - ViT-B-32__openai/textual
+  - ViT-B-32__openai/visual
+  - ViT-H-14-378-quickgelu__dfn5b/textual
+  - ViT-H-14-378-quickgelu__dfn5b/visual
+  - ViT-H-14-quickgelu__dfn5b/textual
+  - ViT-H-14-quickgelu__dfn5b/visual
+  - ViT-H-14__laion2b-s32b-b79k/textual
+  - ViT-H-14__laion2b-s32b-b79k/visual
+  - ViT-L-14-336__openai/textual
+  - ViT-L-14-336__openai/visual
+  - ViT-L-14-quickgelu__dfn2b/textual
+  - ViT-L-14-quickgelu__dfn2b/visual
+  - ViT-L-14__laion2b-s32b-b82k/textual
+  - ViT-L-14__laion2b-s32b-b82k/visual
+  - ViT-L-14__laion400m_e31/textual
+  - ViT-L-14__laion400m_e31/visual
+  - ViT-L-14__laion400m_e32/textual
+  - ViT-L-14__laion400m_e32/visual
+  - ViT-L-14__openai/textual
+  - ViT-L-14__openai/visual
+  - ViT-L-16-SigLIP-256__webli/textual
+  - ViT-L-16-SigLIP-256__webli/visual
+  - ViT-L-16-SigLIP-384__webli/textual
+  - ViT-L-16-SigLIP-384__webli/visual
+  - ViT-L-16-SigLIP2-256__webli/textual
+  - ViT-L-16-SigLIP2-256__webli/visual
+  - ViT-L-16-SigLIP2-384__webli/textual
+  - ViT-L-16-SigLIP2-384__webli/visual
+  - ViT-L-16-SigLIP2-512__webli/textual
+  - ViT-L-16-SigLIP2-512__webli/visual
+  - ViT-SO400M-14-SigLIP-384__webli/textual
+  - ViT-SO400M-14-SigLIP-384__webli/visual
+  - ViT-SO400M-14-SigLIP2-378__webli/textual
+  - ViT-SO400M-14-SigLIP2-378__webli/visual
+  - ViT-SO400M-14-SigLIP2__webli/textual
+  - ViT-SO400M-14-SigLIP2__webli/visual
+  - ViT-SO400M-16-SigLIP2-256__webli/textual
+  - ViT-SO400M-16-SigLIP2-256__webli/visual
+  - ViT-SO400M-16-SigLIP2-384__webli/textual
+  - ViT-SO400M-16-SigLIP2-384__webli/visual
+  - ViT-SO400M-16-SigLIP2-512__webli/textual
+  - ViT-SO400M-16-SigLIP2-512__webli/visual
+  - ViT-g-14__laion2b-s12b-b42k/textual
+  - ViT-g-14__laion2b-s12b-b42k/visual
+  - ViT-gopt-16-SigLIP2-256__webli/textual
+  - ViT-gopt-16-SigLIP2-256__webli/visual
+  - ViT-gopt-16-SigLIP2-384__webli/textual
+  - ViT-gopt-16-SigLIP2-384__webli/visual
+  - XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/textual
+  - XLM-Roberta-Base-ViT-B-32__laion5b_s13b_b90k/visual
+  - XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/textual
+  - XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k/visual
+  - XLM-Roberta-Large-Vit-B-16Plus/textual
+  - XLM-Roberta-Large-Vit-B-16Plus/visual
+  - XLM-Roberta-Large-Vit-B-32/textual
+  - XLM-Roberta-Large-Vit-B-32/visual
+  - XLM-Roberta-Large-Vit-L-14/textual
+  - XLM-Roberta-Large-Vit-L-14/visual
+  - nllb-clip-base-siglip__mrl/textual
+  - nllb-clip-base-siglip__mrl/visual
+  - nllb-clip-base-siglip__v1/textual
+  - nllb-clip-base-siglip__v1/visual
+  - nllb-clip-large-siglip__mrl/textual
+  - nllb-clip-large-siglip__mrl/visual
+  - nllb-clip-large-siglip__v1/textual
+  - nllb-clip-large-siglip__v1/visual

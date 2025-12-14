@@ -1,27 +1,77 @@
 import argparse
 import os
+import tempfile
 import onnx
+import numpy as np
 
 from numpy import cumsum, max, exp, sum
 from rknn.api.custom_op import get_node_attr
-
-class CumSum:
-    # Just CumSum with a different name so it wont conflict
-    op_type = "CumSum"
-
-    def shape_infer(self, node, in_shapes, in_dtypes):
-        return in_shapes.copy(), in_dtypes.copy()
-
-    def compute(self, node, inputs):
-        x = inputs[0]
-        axis = get_node_attr(node, "axis")
-        return [cumsum(x, axis=axis)]
-
 
 parser = argparse.ArgumentParser("RKNN model converting")
 parser.add_argument("model", help="Directory of the model that will be exported to RKNN ex:ViT-B-32__openai.", type=str)
 parser.add_argument("target_platform", help="target platform ex:rk3566", type=str)
 args = parser.parse_args()
+
+
+def generate_random_input_for_model(model_path):
+    """
+    根据 ONNX 模型的输入规范动态生成随机输入数据。
+    返回一个临时 npy 文件路径的列表。
+    """
+    model = onnx.load(model_path)
+    
+    # ONNX 数据类型映射到 numpy 数据类型
+    onnx_dtype_to_numpy = {
+        1: np.float32,    # FLOAT
+        2: np.uint8,      # UINT8
+        3: np.int8,       # INT8
+        4: np.uint16,     # UINT16
+        5: np.int16,      # INT16
+        6: np.int32,      # INT32
+        7: np.int64,      # INT64
+        9: np.bool_,      # BOOL
+        10: np.float16,   # FLOAT16
+        11: np.float64,   # DOUBLE
+        12: np.uint32,    # UINT32
+        13: np.uint64,    # UINT64
+    }
+    
+    input_files = []
+    temp_dir = tempfile.mkdtemp()
+    
+    for i, inp in enumerate(model.graph.input):
+        # 获取输入的形状
+        shape = []
+        for dim in inp.type.tensor_type.shape.dim:
+            if dim.dim_value > 0:
+                shape.append(dim.dim_value)
+            elif dim.dim_param:
+                # 动态维度，使用默认值
+                shape.append(1)
+            else:
+                shape.append(1)
+        
+        # 获取数据类型
+        elem_type = inp.type.tensor_type.elem_type
+        numpy_dtype = onnx_dtype_to_numpy.get(elem_type, np.float32)
+        
+        # 生成随机数据
+        if numpy_dtype in [np.int32, np.int64, np.int8, np.int16]:
+            random_data = np.random.randint(0, 100, size=shape, dtype=numpy_dtype)
+        elif numpy_dtype in [np.uint8, np.uint16, np.uint32, np.uint64]:
+            random_data = np.random.randint(0, 100, size=shape, dtype=numpy_dtype)
+        elif numpy_dtype == np.bool_:
+            random_data = np.random.choice([True, False], size=shape)
+        else:
+            random_data = np.random.randn(*shape).astype(numpy_dtype)
+        
+        # 保存到临时文件
+        temp_file = os.path.join(temp_dir, f"input_{i}_{inp.name.replace('/', '_')}.npy")
+        np.save(temp_file, random_data)
+        input_files.append(temp_file)
+        print(f"Generated random input for '{inp.name}': shape={shape}, dtype={numpy_dtype}")
+    
+    return input_files
 
 
 def ConvertModel(model_path='ViT-B-32__openai/textual/model.onnx', target_platform='rk3566', dynamic_input = None):
@@ -53,7 +103,12 @@ def ConvertModel(model_path='ViT-B-32__openai/textual/model.onnx', target_platfo
         exit(ret)
     print(model_path.replace('model.onnx',f'{target_platform}.rknn'))
     if "textual" in model_path:
-        ret = rknn.accuracy_analysis(inputs=["rand.npy"])
+        input_files = generate_random_input_for_model(model_path)
+        ret = rknn.accuracy_analysis(inputs=input_files)
+        # 清理临时文件
+        for f in input_files:
+            if os.path.exists(f):
+                os.remove(f)
         if ret != 0:
             print("Accuracy analysis failed!")
             exit(ret)

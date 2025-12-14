@@ -34,8 +34,8 @@ def main():
     xlm_dir = "XLM-Roberta-Large-ViT-H-14__frozen_laion5b_s13b_b90k"
     xlm_out_dir = "test_cumsum_xlm" 
     
-    tasks.append((os.path.join(xlm_dir, "textual/model.onnx"), os.path.join(xlm_out_dir, "textual/model.onnx")))
-    tasks.append((os.path.join(xlm_dir, "visual/model.onnx"), os.path.join(xlm_out_dir, "visual/model.onnx")))
+    # tasks.append((os.path.join(xlm_dir, "textual/model.onnx"), os.path.join(xlm_out_dir, "textual/model.onnx")))
+    # tasks.append((os.path.join(xlm_dir, "visual/model.onnx"), os.path.join(xlm_out_dir, "visual/model.onnx")))
 
     for input_p, output_p in tasks:
         run_conversion(input_p, output_p)
