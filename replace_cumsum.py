@@ -94,33 +94,102 @@ def create_matmul_subgraph(node, graph, model):
     output_name = node.output[0]
     
     # Get Shape
-    def get_shape(name):
+    def get_shape(name, visited=None):
+        if visited is None:
+            visited = set()
+        
+        # 防止无限递归
+        if name in visited:
+            return None
+        visited.add(name)
+        
         # 1. Check value_info
         for info in graph.value_info:
             if info.name == name:
-                return [d.dim_value for d in info.type.tensor_type.shape.dim]
+                shape = [d.dim_value for d in info.type.tensor_type.shape.dim]
+                if all(s > 0 for s in shape):
+                    return shape
+        
         # 2. Check graph inputs
         for info in graph.input:
             if info.name == name:
-                return [d.dim_value for d in info.type.tensor_type.shape.dim]
+                shape = [d.dim_value for d in info.type.tensor_type.shape.dim]
+                if all(s > 0 for s in shape):
+                    return shape
+        
         # 3. Check Initializers (often missing from value_info if not inferred)
         for init in graph.initializer:
             if init.name == name:
                 return list(init.dims)
-        # 4. Simple Traceback (e.g. Cast preserves shape)
-        # Find the node that produces this output 'name'
+        
+        # 4. Enhanced Traceback for various operations
         producer = None
         for n in graph.node:
              if name in n.output:
                  producer = n
                  break
-        if producer and producer.op_type in ["Cast", "Identity", "Not", "Abs", "Relu", "Neg", "Softmax", "Sigmoid", "Equal", "Less", "Greater"]:
-             # Assume element-wise, shape of output matches shape of input[0]
+        
+        if not producer:
+            return None
+        
+        # Element-wise operations that preserve shape
+        if producer.op_type in ["Cast", "Identity", "Not", "Abs", "Relu", "Neg", 
+                                "Softmax", "Sigmoid", "Tanh", "Exp", "Log",
+                                "Equal", "Less", "Greater", "And", "Or", "Xor",
+                                "Floor", "Ceil", "Round", "Sqrt", "Reciprocal"]:
             if len(producer.input) > 0:
                 print(f"DEBUG: Tracing shape through {producer.name} ({producer.op_type})")
-                return get_shape(producer.input[0])
-            
+                return get_shape(producer.input[0], visited)
+        
+        # Reshape operation - try to get target shape from second input
+        if producer.op_type == "Reshape":
+            if len(producer.input) >= 2:
+                shape_input = producer.input[1]
+                shape_value = get_constant_value(shape_input, graph)
+                if shape_value is not None:
+                    target_shape = shape_value.tolist() if hasattr(shape_value, 'tolist') else list(shape_value)
+                    # Handle -1 and 0 in reshape
+                    if -1 in target_shape or 0 in target_shape:
+                        # Need source shape to resolve
+                        source_shape = get_shape(producer.input[0], visited)
+                        if source_shape:
+                            target_shape = resolve_reshape_shape(source_shape, target_shape)
+                    print(f"DEBUG: Reshape {producer.name} target shape: {target_shape}")
+                    if target_shape and all(s > 0 for s in target_shape):
+                        return target_shape
+            # Fallback: try to get from input
+            print(f"DEBUG: Reshape {producer.name} - trying input shape")
+            return get_shape(producer.input[0], visited)
+        
+        # Binary operations - typically preserve shape (broadcasting)
+        if producer.op_type in ["Add", "Sub", "Mul", "Div", "Pow", "MatMul"]:
+            # Try first input
+            if len(producer.input) > 0:
+                print(f"DEBUG: Tracing shape through {producer.name} ({producer.op_type})")
+                shape = get_shape(producer.input[0], visited)
+                if shape:
+                    return shape
+        
         return None
+    
+    def resolve_reshape_shape(source_shape, target_shape):
+        """Resolve -1 and 0 in reshape target shape"""
+        import math
+        result = list(target_shape)
+        source_size = math.prod(source_shape)
+        
+        # Replace 0 with corresponding source dimension
+        for i, dim in enumerate(result):
+            if dim == 0 and i < len(source_shape):
+                result[i] = source_shape[i]
+        
+        # Resolve -1
+        if -1 in result:
+            known_size = math.prod([d for d in result if d > 0])
+            idx = result.index(-1)
+            result[idx] = source_size // known_size if known_size > 0 else 1
+        
+        return result
 
     input_shape = get_shape(input_name)
     if not input_shape:
