@@ -345,22 +345,35 @@ def create_matmul_subgraph(node, graph, model):
 
 def process_model(model_path, output_path):
     print(f"\nProcessing {model_path}...")
-    model = onnx.load(model_path)
-    print(f"DEBUG: Loaded model. Nodes: {len(model.graph.node)}")
     
+    input_dir = os.path.dirname(os.path.abspath(model_path))
+    input_basename = os.path.basename(model_path)
+    output_dir = os.path.dirname(os.path.abspath(output_path))
+    
+    original_dir = os.getcwd()
     try:
-        # Create a copy or just rely on return value? 
-        # infer_shapes returns a NEW model proto usually.
-        inferred_model = onnx.shape_inference.infer_shapes(model)
-        if len(inferred_model.graph.node) < len(model.graph.node):
-            print(f"WARNING: Shape inference dropped nodes ({len(model.graph.node)} -> {len(inferred_model.graph.node)}). Discarding inferred model.")
-        else:
-            model = inferred_model
-            print(f"DEBUG: Shape inference successful. Nodes: {len(model.graph.node)}")
-    except Exception as e:
-        print(f"WARNING: Shape inference failed: {e}")
-        # Keep original model
-        pass
+        os.chdir(input_dir)
+        model = onnx.load(input_basename)
+        
+        try:
+            onnx.load_external_data_for_model(model, ".")
+            print(f"DEBUG: Loaded external data from {input_dir}")
+        except Exception as e:
+            print(f"DEBUG: No external data or loading failed: {e}")
+        
+        print(f"DEBUG: Loaded model. Nodes: {len(model.graph.node)}")
+        
+        try:
+            inferred_model = onnx.shape_inference.infer_shapes(model)
+            if len(inferred_model.graph.node) < len(model.graph.node):
+                print(f"WARNING: Shape inference dropped nodes ({len(model.graph.node)} -> {len(inferred_model.graph.node)}). Discarding inferred model.")
+            else:
+                model = inferred_model
+                print(f"DEBUG: Shape inference successful. Nodes: {len(model.graph.node)}")
+        except Exception as e:
+            print(f"WARNING: Shape inference failed: {e}")
+    finally:
+        os.chdir(original_dir)
         
     graph = model.graph
     new_graph_nodes = []
@@ -404,19 +417,28 @@ def process_model(model_path, output_path):
 
 
 def save_safe(model, output_path):
-    # Always save with external data to prevent 2GB limit issues
-    if os.path.exists(output_path):
-        os.remove(output_path)
-    # Remove existing external data file if exists to prevent accumulating
-    data_path = output_path + ".data"
-    if os.path.exists(data_path):
-        os.remove(data_path)
-        
+    output_dir = os.path.dirname(os.path.abspath(output_path))
+    output_basename = os.path.basename(output_path)
+    
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
+    
+    original_dir = os.getcwd()
     try:
-        onnx.save(model, output_path, save_as_external_data=True, all_tensors_to_one_file=True, location=os.path.basename(output_path) + ".data", size_threshold=1024, convert_attribute=False)
-    except TypeError:
-        # Older ONNX versions might not support all args
-        onnx.save(model, output_path, save_as_external_data=True, all_tensors_to_one_file=True, location=os.path.basename(output_path) + ".data")
+        os.chdir(output_dir)
+        
+        if os.path.exists(output_basename):
+            os.remove(output_basename)
+        data_path = output_basename + ".data"
+        if os.path.exists(data_path):
+            os.remove(data_path)
+            
+        try:
+            onnx.save(model, output_basename, save_as_external_data=True, all_tensors_to_one_file=True, location=data_path, size_threshold=1024, convert_attribute=False)
+        except TypeError:
+            onnx.save(model, output_basename, save_as_external_data=True, all_tensors_to_one_file=True, location=data_path)
+    finally:
+        os.chdir(original_dir)
 
 
 import argparse

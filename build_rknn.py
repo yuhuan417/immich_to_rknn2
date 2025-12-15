@@ -8,8 +8,9 @@ from numpy import cumsum, max, exp, sum
 from rknn.api.custom_op import get_node_attr
 
 parser = argparse.ArgumentParser("RKNN model converting")
-parser.add_argument("model", help="Directory of the model that will be exported to RKNN ex:ViT-B-32__openai.", type=str)
+parser.add_argument("model", help="Path to ONNX model file, ex: models/ViT-B-32__openai/textual/model.onnx", type=str)
 parser.add_argument("target_platform", help="target platform ex:rk3566", type=str)
+parser.add_argument("--dynamic-input", help="Dynamic input specification for detection models", type=str, default=None)
 args = parser.parse_args()
 
 
@@ -18,7 +19,19 @@ def generate_random_input_for_model(model_path):
     根据 ONNX 模型的输入规范动态生成随机输入数据。
     返回一个临时 npy 文件路径的列表。
     """
-    model = onnx.load(model_path)
+    model_dir = os.path.dirname(os.path.abspath(model_path))
+    model_basename = os.path.basename(model_path)
+    original_dir = os.getcwd()
+    
+    try:
+        os.chdir(model_dir)
+        model = onnx.load(model_basename)
+        try:
+            onnx.load_external_data_for_model(model, ".")
+        except:
+            pass
+    finally:
+        os.chdir(original_dir)
     
     # ONNX 数据类型映射到 numpy 数据类型
     onnx_dtype_to_numpy = {
@@ -127,15 +140,13 @@ def ConvertModel(model_path='ViT-B-32__openai/textual/model.onnx', target_platfo
             pass
 
 
-if os.path.isdir(f'{args.model}/textual') and os.path.isdir(f'{args.model}/visual'): # is a clip model
-    print('Converting Clip model.')
-    ConvertModel(model_path=f'{args.model}/textual/model.onnx', target_platform=args.target_platform)
-    ConvertModel(model_path=f'{args.model}/visual/model.onnx', target_platform=args.target_platform)
+if not os.path.isfile(args.model):
+    print(f'Error: Model file {args.model} not found!')
+    exit(1)
 
-elif os.path.isdir(f'{args.model}/detection') and os.path.isdir(f'{args.model}/recognition'): # is a facial model
-    print('Converting facial model.')
-    ConvertModel(f'{args.model}/detection/model.onnx', args.target_platform, [[[1, 3, 640, 640]]])
-    ConvertModel(f'{args.model}/recognition/model.onnx', args.target_platform, [[[1, 3, 112, 112]]])
+dynamic_input = None
+if args.dynamic_input:
+    import json
+    dynamic_input = json.loads(args.dynamic_input)
 
-else:
-    print('Unknown model.')
+ConvertModel(model_path=args.model, target_platform=args.target_platform, dynamic_input=dynamic_input)
